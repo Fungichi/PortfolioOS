@@ -34,48 +34,17 @@ export const ContactSection = () => {
             <div className="border border-primary p-6 bg-card">
               <div className="grid grid-cols-2 gap-8">
                 <div className="space-y-3">
-                  <div className="text-accent mb-2"># Professional Links</div>
+                  <div className="text-accent mb-2"># Socials</div>
                   <div className="space-y-2">
-                    <div className="flex items-center">
-                      <span className="text-muted-foreground w-12">email=</span>
-                      <span>your.email@example.com</span>
-                    </div>
+                 
                     <div className="flex items-center">
                       <span className="text-muted-foreground w-12">github=</span>
-                      <span>https://github.com/yourusername</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="text-muted-foreground w-12">linkedin=</span>
-                      <span>https://linkedin.com/in/yourprofile</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="text-muted-foreground w-12">website=</span>
-                      <span>https://yourwebsite.com</span>
+                      <span>https://github.com/Fungichi</span>
                     </div>
                   </div>
                 </div>
                 
-                <div className="space-y-3">
-                  <div className="text-accent mb-2"># Social Networks</div>
-                  <div className="space-y-2">
-                    <div className="flex items-center">
-                      <span className="text-muted-foreground w-12">twitter=</span>
-                      <span>@yourusername</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="text-muted-foreground w-12">discord=</span>
-                      <span>YourName#1234</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="text-muted-foreground w-12">location=</span>
-                      <span>Your City, Country</span>
-                    </div>
-                    <div className="flex items-center">
-                      <span className="text-muted-foreground w-12">timezone=</span>
-                      <span>UTC+0 (Available 9-5)</span>
-                    </div>
-                  </div>
-                </div>
+    
               </div>
             </div>
           </div>

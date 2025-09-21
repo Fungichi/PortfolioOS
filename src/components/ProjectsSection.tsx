@@ -1,28 +1,32 @@
 export const ProjectsSection = () => {
   const projects = [
     {
-      name: "E-Commerce Platform",
+      name: "PortfolioOS",
       status: "ACTIVE",
-      tech: "React, Node.js, MongoDB",
-      description: "Full-stack e-commerce solution with real-time inventory",
+      tech: "Lovable, Vite, typescript, html, css, js",
+      description: "A personal website made with Lovable",
+      link: "https://github.com/Fungichi/PortfolioOS",
     },
     {
-      name: "Task Management API", 
+      name: "Chrobit", 
       status: "COMPLETED",
-      tech: "Python, FastAPI, PostgreSQL",
-      description: "RESTful API for project and task management",
+      tech: "Python curses library",
+      description: "Highly customisable binary clock in the terminal",
+      link: "https://github.com/Fungichi/Chrobit",
     },
     {
-      name: "Chat Application",
-      status: "ACTIVE", 
-      tech: "Next.js, Socket.io, Redis",
-      description: "Real-time messaging with file sharing capabilities",
+      name: "Noyevon",
+      status: "COMPLETED", 
+      tech: "Python, subprocesses, sys libraries",
+      description: "A script to switch off VeyonService the second it comes online",
+      link: "https://github.com/Fungichi/Noyevon",
     },
     {
-      name: "Data Visualization Dashboard",
+      name: "Discord bot",
       status: "COMPLETED",
-      tech: "Vue.js, D3.js, Express",
-      description: "Interactive dashboard for business analytics",
+      tech: "python, sqlite3, discord",
+      description: "A discord bot to give or take someone's aura",
+      link: "https://github.com/Fungichi/Discordbot",
     },
   ];
 
@@ -47,7 +51,7 @@ export const ProjectsSection = () => {
               <div>UNIT</div>
               <div>LOAD</div>
               <div>ACTIVE</div>
-              <div>SUB</div>
+              <div>GIT</div>
             </div>
             
             {projects.map((project, index) => (
@@ -57,7 +61,7 @@ export const ProjectsSection = () => {
                 <div className={project.status === 'ACTIVE' ? 'text-primary' : 'text-secondary'}>
                   {project.status.toLowerCase()}
                 </div>
-                <div className="text-muted-foreground">running</div>
+                <div className="text-muted-foreground"><a href={project.link} target="_blank">link</a></div>
               </div>
             ))}
           </div>
@@ -75,6 +79,7 @@ export const ProjectsSection = () => {
                   <div><span className="text-accent">"status":</span> "{project.status}",</div>
                   <div><span className="text-accent">"technologies":</span> "{project.tech}",</div>
                   <div><span className="text-accent">"description":</span> "{project.description}"</div>
+                  <div><span className="text-accent">"link":</span> <a target="_blank" href={project.link}>{project.link}</a></div>
                 </div>
               </div>
             ))}

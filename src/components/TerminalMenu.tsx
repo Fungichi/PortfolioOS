@@ -14,7 +14,6 @@ const menuOptions: MenuOption[] = [
   { id: 'about', label: 'About', description: 'Personal information and background' },
   { id: 'projects', label: 'Projects', description: 'Featured development projects' },
   { id: 'skills', label: 'Skills', description: 'Technical skills and expertise' },
-  { id: 'contact', label: 'Contact', description: 'Get in touch information' },
   { id: 'reboot', label: 'Reboot', description: 'Restart the system' },
 ];
 

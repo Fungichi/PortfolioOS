@@ -5,7 +5,7 @@ interface BootSequenceProps {
 }
 
 const bootMessages = [
-  "[ 0.000000] Linux version 6.1.0-terminal (root@localhost) #1 SMP",
+  "[ 0.000000] Portfolio OS 6.1.0-terminal (root@localhost) #1 SMP",
   "[ 0.000000] Command line: BOOT_IMAGE=/boot/vmlinuz root=/dev/sda1 ro quiet splash",
   "[ 0.000000] KERNEL supported cpus:",
   "[ 0.000000]   Intel GenuineIntel",
@@ -56,7 +56,7 @@ export const BootSequence = ({ onComplete }: BootSequenceProps) => {
  ██╔═══╝ ██║   ██║██╔══██╗   ██║   ██╔══╝  ██║   ██║██║     ██║██║   ██║██║   ██║╚════██║
  ██║     ╚██████╔╝██║  ██║   ██║   ██║     ╚██████╔╝███████╗██║╚██████╔╝╚██████╔╝███████║
  ╚═╝      ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚═╝      ╚═════╝ ╚══════╝╚═╝ ╚═════╝  ╚═════╝ ╚══════╝
-                                     by [Your Name]
+                                     by [Retroz]
 `}
       </div>
       
