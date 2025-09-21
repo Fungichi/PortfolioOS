@@ -13,6 +13,10 @@ export default {
       },
     },
     extend: {
+      fontFamily: {
+        mono: ['Fira Code', 'Source Code Pro', 'Courier New', 'monospace'],
+        terminal: ['Fira Code', 'Source Code Pro', 'Courier New', 'monospace'],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

@@ -2,41 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Retro Terminal Design System - Classic green phosphor terminal aesthetic */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Terminal Colors - HSL format */
+    --background: 0 0% 0%; /* Pure black terminal background */
+    --foreground: 120 100% 50%; /* Classic terminal green */
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 2%; /* Slightly lighter black for cards */
+    --card-foreground: 120 100% 50%;
 
-    --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover: 0 0% 2%;
+    --popover-foreground: 120 100% 50%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    --primary: 120 100% 50%; /* Terminal green */
+    --primary-foreground: 0 0% 0%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    --secondary: 45 100% 50%; /* Amber for highlights */
+    --secondary-foreground: 0 0% 0%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    --muted: 0 0% 10%; /* Dark gray for muted elements */
+    --muted-foreground: 120 50% 40%; /* Dimmed green */
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent: 45 100% 50%; /* Amber accent */
+    --accent-foreground: 0 0% 0%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 100% 50%; /* Red for errors */
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    --border: 120 50% 25%; /* Dimmed green borders */
+    --input: 0 0% 5%;
+    --ring: 120 100% 50%;
 
-    --radius: 0.5rem;
+    --radius: 0; /* Sharp corners for retro feel */
+
+    /* Custom Terminal Variables */
+    --terminal-green: 120 100% 50%;
+    --terminal-amber: 45 100% 50%;
+    --terminal-dim-green: 120 50% 40%;
+    --terminal-cursor: 120 100% 75%;
+    --terminal-shadow: 120 100% 25%;
+    --scanline-opacity: 0.1;
 
     --sidebar-background: 0 0% 98%;
 
@@ -94,6 +101,7 @@ All colors MUST be HSL.
   }
 }
 
+/* Terminal-specific styling and animations */
 @layer base {
   * {
     @apply border-border;
@@ -101,5 +109,127 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
+    font-family: 'Fira Code', 'Source Code Pro', 'Courier New', monospace;
+  }
+
+  /* Scanline effect for CRT monitor feel */
+  .scanlines::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 2px,
+      rgba(0, 255, 0, var(--scanline-opacity)) 2px,
+      rgba(0, 255, 0, var(--scanline-opacity)) 4px
+    );
+    pointer-events: none;
+    z-index: 1000;
+  }
+
+  /* Terminal text effects */
+  .terminal-text {
+    text-shadow: 0 0 5px hsl(var(--terminal-green));
+    letter-spacing: 1px;
+  }
+
+  .terminal-glow {
+    text-shadow: 
+      0 0 5px hsl(var(--terminal-green)),
+      0 0 10px hsl(var(--terminal-green)),
+      0 0 15px hsl(var(--terminal-green));
+  }
+
+  /* Cursor animation */
+  .cursor {
+    display: inline-block;
+    background-color: hsl(var(--terminal-cursor));
+    animation: blink 1s infinite;
+  }
+
+  .cursor-line {
+    display: inline-block;
+    width: 10px;
+    height: 1.2em;
+    background-color: hsl(var(--terminal-cursor));
+    animation: blink 1s infinite;
+  }
+}
+
+@layer components {
+  /* Terminal window styling */
+  .terminal-window {
+    @apply bg-background border border-primary p-4 relative;
+    box-shadow: 
+      inset 0 0 20px rgba(0, 255, 0, 0.1),
+      0 0 20px rgba(0, 255, 0, 0.2);
+  }
+
+  /* Boot text styling */
+  .boot-text {
+    @apply font-mono text-sm leading-relaxed terminal-text;
+  }
+
+  /* Menu item styling */
+  .menu-item {
+    @apply p-2 cursor-pointer transition-colors duration-200;
+  }
+
+  .menu-item:hover,
+  .menu-item.selected {
+    @apply bg-primary text-primary-foreground;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  }
+
+  /* ASCII art styling */
+  .ascii-art {
+    @apply font-mono text-xs leading-none terminal-glow;
+    white-space: pre;
+  }
+}
+
+@layer utilities {
+  /* Animation keyframes */
+  @keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0; }
+  }
+
+  @keyframes typewriter {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes scrollUp {
+    from { transform: translateY(100%); }
+    to { transform: translateY(0); }
+  }
+
+  /* Utility animations */
+  .animate-typewriter {
+    animation: typewriter 2s steps(40, end);
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-in;
+  }
+
+  .animate-scroll-up {
+    animation: scrollUp 0.3s ease-out;
+  }
+
+  .animate-blink {
+    animation: blink 1s infinite;
   }
 }
