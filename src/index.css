@@ -8,22 +8,22 @@
   :root {
     /* Terminal Colors - HSL format */
     --background: 0 0% 0%; /* Pure black terminal background */
-    --foreground: 120 100% 50%; /* Classic terminal green */
+    --foreground: 27 96% 47%; /* Vibrant terminal orange */
 
     --card: 0 0% 2%; /* Slightly lighter black for cards */
-    --card-foreground: 120 100% 50%;
+    --card-foreground: 27 96% 47%;
 
     --popover: 0 0% 2%;
-    --popover-foreground: 120 100% 50%;
+    --popover-foreground: 27 96% 47%;
 
-    --primary: 120 100% 50%; /* Terminal green */
+    --primary: 27 96% 47%; /* Terminal orange */
     --primary-foreground: 0 0% 0%;
 
     --secondary: 45 100% 50%; /* Amber for highlights */
     --secondary-foreground: 0 0% 0%;
 
     --muted: 0 0% 10%; /* Dark gray for muted elements */
-    --muted-foreground: 120 50% 40%; /* Dimmed green */
+    --muted-foreground: 27 60% 30%; /* Dimmed orange */
 
     --accent: 45 100% 50%; /* Amber accent */
     --accent-foreground: 0 0% 0%;
@@ -31,18 +31,18 @@
     --destructive: 0 100% 50%; /* Red for errors */
     --destructive-foreground: 0 0% 100%;
 
-    --border: 120 50% 25%; /* Dimmed green borders */
+    --border: 27 60% 25%; /* Dimmed orange borders */
     --input: 0 0% 5%;
-    --ring: 120 100% 50%;
+    --ring: 27 96% 47%;
 
     --radius: 0; /* Sharp corners for retro feel */
 
     /* Custom Terminal Variables */
-    --terminal-green: 120 100% 50%;
+    --terminal-orange: 27 96% 47%;
     --terminal-amber: 45 100% 50%;
-    --terminal-dim-green: 120 50% 40%;
-    --terminal-cursor: 120 100% 75%;
-    --terminal-shadow: 120 100% 25%;
+    --terminal-dim-orange: 27 60% 30%;
+    --terminal-cursor: 27 96% 65%;
+    --terminal-shadow: 27 96% 25%;
     --scanline-opacity: 0.1;
 
     --sidebar-background: 0 0% 98%;
@@ -124,8 +124,8 @@
       0deg,
       transparent,
       transparent 2px,
-      rgba(0, 255, 0, var(--scanline-opacity)) 2px,
-      rgba(0, 255, 0, var(--scanline-opacity)) 4px
+      rgba(235, 108, 5, var(--scanline-opacity)) 2px,
+      rgba(235, 108, 5, var(--scanline-opacity)) 4px
     );
     pointer-events: none;
     z-index: 1000;
@@ -133,15 +133,15 @@
 
   /* Terminal text effects */
   .terminal-text {
-    text-shadow: 0 0 5px hsl(var(--terminal-green));
+    text-shadow: 0 0 5px hsl(var(--terminal-orange));
     letter-spacing: 1px;
   }
 
   .terminal-glow {
     text-shadow: 
-      0 0 5px hsl(var(--terminal-green)),
-      0 0 10px hsl(var(--terminal-green)),
-      0 0 15px hsl(var(--terminal-green));
+      0 0 5px hsl(var(--terminal-orange)),
+      0 0 10px hsl(var(--terminal-orange)),
+      0 0 15px hsl(var(--terminal-orange));
   }
 
   /* Cursor animation */
@@ -165,8 +165,8 @@
   .terminal-window {
     @apply bg-background border border-primary p-4 relative;
     box-shadow: 
-      inset 0 0 20px rgba(0, 255, 0, 0.1),
-      0 0 20px rgba(0, 255, 0, 0.2);
+      inset 0 0 20px rgba(235, 108, 5, 0.1),
+      0 0 20px rgba(235, 108, 5, 0.2);
   }
 
   /* Boot text styling */
