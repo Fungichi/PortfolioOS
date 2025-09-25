@@ -14,6 +14,7 @@ const menuOptions: MenuOption[] = [
   { id: 'about', label: 'About', description: 'Personal information and background' },
   { id: 'projects', label: 'Projects', description: 'Featured development projects' },
   { id: 'skills', label: 'Skills', description: 'Technical skills and expertise' },
+  { id: 'contact', label: 'Internet Junkyard', description: 'A collection of remarkable scraps found on the internet'},
   { id: 'reboot', label: 'Reboot', description: 'Restart the system' },
 ];
 
@@ -44,7 +45,7 @@ export const TerminalMenu = ({ onSelect }: TerminalMenuProps) => {
 
   return (
     <div className="terminal-window min-h-screen p-8 scanlines">
-      <div className="ascii-art text-center mb-8">
+      <div className="ascii-arts text-center mb-8">
 {`
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                              PORTFOLIO BOOTLOADER                            ║

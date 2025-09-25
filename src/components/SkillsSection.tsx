@@ -3,37 +3,35 @@ export const SkillsSection = () => {
     {
       category: "Languages",
       skills: [
-        { name: "JavaScript", level: 95 },
-        { name: "TypeScript", level: 90 },
         { name: "Python", level: 85 },
-        { name: "Java", level: 75 },
-      ]
+        { name: "Rust", level: 40, label: "LEARNING" },
+        { name: "Assembly", level: 0, label: "LEARNING" },
+        { name: "HTML", level: 70},
+        { name: "CSS", level: 30},      ]
     },
     {
-      category: "Frontend", 
+      category: "Frameworks & libraries", 
       skills: [
-        { name: "React", level: 95 },
-        { name: "Vue.js", level: 80 },
-        { name: "Next.js", level: 85 },
-        { name: "Tailwind CSS", level: 90 },
-      ]
-    },
-    {
-      category: "Backend",
-      skills: [
-        { name: "Node.js", level: 90 },
-        { name: "Express", level: 85 },
-        { name: "FastAPI", level: 80 },
         { name: "Django", level: 75 },
+        { name: "Selenium", level: 80 },
+        { name: "Pyautogui", level: 80},
+      ]
+    },
+    {
+      category: "Tools & Platforms",
+      skills: [
+        { name: "Godot", level: 65 },
+        { name: "Git", level: 40, label: "LEARNING" },
+        { name: "Linux", level: 50, label: "LEARNING" },
+        { name: "Vscode", level: 75 },
       ]
     },
     {
       category: "Database",
       skills: [
-        { name: "PostgreSQL", level: 85 },
-        { name: "MongoDB", level: 80 },
-        { name: "Redis", level: 75 },
-        { name: "MySQL", level: 70 },
+        { name: "SQlite", level: 60 },
+
+
       ]
     },
   ];
@@ -41,7 +39,7 @@ export const SkillsSection = () => {
   return (
     <div className="terminal-window min-h-screen p-8 scanlines">
       <div className="max-w-4xl mx-auto">
-        <div className="ascii-art mb-8">
+        <div className="ascii-arts mb-8">
 {`
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                                   SKILLS                                     ║
@@ -76,14 +74,18 @@ export const SkillsSection = () => {
                             style={{ width: `${skill.level}%` }}
                           ></div>
                           <div className="absolute inset-0 flex items-center justify-center text-xs">
-                            {skill.level}%
+                           
                           </div>
                         </div>
                         
                         <div className="w-16 text-right text-muted-foreground">
-                          {skill.level >= 90 ? 'EXPERT' : 
-                           skill.level >= 80 ? 'ADVANCED' : 
-                           skill.level >= 70 ? 'PROFICIENT' : 'LEARNING'}
+                        {skill.label ?? (
+                            skill.level >= 90 ? 'EXPERT' : 
+                            skill.level >= 80 ? 'ADVANCED' : 
+                            skill.level >= 70 ? 'PROFICIENT' :
+                            skill.level >= 50 ? 'INTERMEDIATE' : "BEGINNER"
+                          
+                          )}
                         </div>
                       </div>
                     </div>
@@ -92,30 +94,9 @@ export const SkillsSection = () => {
               </div>
             ))}
           </div>
-          
-          <div className="mt-8">
-            <span className="text-secondary">$</span> neofetch
-          </div>
-          
-          <div className="pl-4 grid grid-cols-2 gap-8 mt-4">
-            <div className="ascii-art text-xs">
-{`
-       _____ 
-      /     \\
-     | () () |
-      \\  ^  /
-       |||||
-       |||||
-`}
-            </div>
-            <div className="space-y-1 text-sm">
-              <div><span className="text-accent">OS:</span> DeveloperOS 2024</div>
-              <div><span className="text-accent">Kernel:</span> Brain v2.0</div>
-              <div><span className="text-accent">Uptime:</span> {Math.floor(Math.random() * 1000) + 5000} hours</div>
-              <div><span className="text-accent">Shell:</span> creativity/bash</div>
-              <div><span className="text-accent">IDE:</span> VS Code, NeoVim</div>
-              <div><span className="text-accent">Coffee:</span> 100% dependency</div>
-            </div>
+          <br></br>
+          <div className="animate-fade-in">
+            <span className="text-secondary">$</span> cat skills-note.txt
           </div>
           
           <div className="mt-8 flex items-center">

@@ -22,6 +22,7 @@ const bootMessages = [
   "[ 0.004123] Loading user profile data...",
   "[ 0.004456] Scanning for projects...",
   "[ 0.004789] Skills database loaded successfully",
+  "[ 0.005073] Scraping the internet scraps",
   "[ 0.005123] Contact information verified",
   "[ 0.005456] Terminal UI ready",
   "[ 0.005789] System boot complete. Welcome to PortfolioOS!",

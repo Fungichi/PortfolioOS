@@ -33,7 +33,7 @@ export const ProjectsSection = () => {
   return (
     <div className="terminal-window min-h-screen p-8 scanlines">
       <div className="max-w-5xl mx-auto">
-        <div className="ascii-art mb-8">
+        <div className="ascii-arts mb-8">
 {`
 ╔══════════════════════════════════════════════════════════════════════════════╗
 ║                                  PROJECTS                                    ║

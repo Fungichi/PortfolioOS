@@ -100,7 +100,6 @@
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 }
-
 /* Terminal-specific styling and animations */
 @layer base {
   * {
@@ -191,6 +190,11 @@
     white-space: pre;
   }
 }
+.ascii-arts {
+  @apply font-mono text-xs leading-none;
+  white-space: pre;
+}
+
 
 @layer utilities {
   /* Animation keyframes */
